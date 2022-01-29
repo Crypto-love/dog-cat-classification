@@ -1,378 +1,96 @@
-Contribution: 2018-10-19 00:00
+# Dog-Cat Classifier
 
-Contribution: 2018-10-19 00:01
+Dog and cat image classifier with deep learning.<br/>
 
-Contribution: 2018-10-19 00:02
+#### Example:
+| <img src="test_dog.jpg?raw=true" width="200">|<img src="test_cat.jpg?raw=true" width="200">|
+|:-:|:-:|
+|Dog: 0.92035621<br/>Cat: 0.04618423|Cat: 0.90135497<br/>Dog: 0.09642436|
 
-Contribution: 2018-10-19 00:03
+##### Layer outputs of test photographs:
 
-Contribution: 2018-10-22 00:00
+| <img src="Data/Layer_Outputs/Dog/Layer_1_Outputs/4.jpg?raw=true" width="32"> <img src="Data/Layer_Outputs/Cat/Layer_1_Outputs/4.jpg?raw=true" width="32">| <img src="Data/Layer_Outputs/Dog/Layer_2_Outputs/16.jpg?raw=true" width="32"> <img src="Data/Layer_Outputs/Cat/Layer_2_Outputs/16.jpg?raw=true" width="32">| <img src="Data/Layer_Outputs/Dog/Layer_3_Outputs/10.jpg?raw=true" width="32"> <img src="Data/Layer_Outputs/Cat/Layer_3_Outputs/10.jpg?raw=true" width="32">|
+|:--:|:--:|:--:|
+|Layer: 1<br/>Kernel: 4|Layer: 2<br/>Kernel: 16|Layer: 3<br/>Kernel: 10|
 
-Contribution: 2018-10-22 00:01
+###### Look up `Data/Layer_Outputs` folder for other outputs.
 
-Contribution: 2018-10-22 00:02
+### Using Predict Command:
+`python3 predict.py <ImageFileName>`
 
-Contribution: 2018-10-22 00:03
+### Model Training:
+`python3 train.py`
 
-Contribution: 2018-10-22 00:04
+### Using TensorBoard:
+`tensorboard --logdir=Data/Checkpoints/./logs`
 
-Contribution: 2018-10-22 00:05
+### Model Architecture:
+- Input Data
+Shape: 64x64x3
 
-Contribution: 2018-10-22 00:06
+Layer 1:
+- Convolutional Layer
+32 filter
+Filter shape: 3x3
 
-Contribution: 2018-10-22 00:07
+- Activation
+Function: ReLu
 
-Contribution: 2018-10-22 00:08
+- Max Pooling
+Pool shape: 2x2
 
-Contribution: 2018-10-22 00:09
+Layer 2:
+- Convolutional Layer
+32 filter
+Filter shape: 3x3
 
-Contribution: 2018-10-22 00:10
+- Activation
+Function: ReLu
 
-Contribution: 2018-10-22 00:11
+- Max Pooling
+Pool shape: 2x2
 
-Contribution: 2018-10-22 00:12
+Layer 3:
+- Convolutional Layer
+64 filter
+Filter shape: 3x3
 
-Contribution: 2018-10-22 00:13
+- Activation
+Function: ReLu
 
-Contribution: 2018-10-22 00:14
+- Max Pooling
+Pool shape: 2x2
 
-Contribution: 2018-10-24 00:00
+Classification:
+- Flatten
 
-Contribution: 2018-10-24 00:01
+- Dense
+Size: 64
 
-Contribution: 2018-10-24 00:02
+- Activation
+Function: ReLu
 
-Contribution: 2018-10-24 00:03
+- Dropout
+Rate: 0.5
 
-Contribution: 2018-10-24 00:04
+- Dense
+Size: 2
 
-Contribution: 2018-10-24 00:05
+- Activation
+Function: Sigmoid
 
-Contribution: 2018-10-24 00:06
+##### Optimizer: Adadelta
+##### Loss: Binary Crossentropy
 
-Contribution: 2018-10-24 00:07
 
-Contribution: 2018-10-24 00:08
 
-Contribution: 2018-10-24 00:09
+### Adding new train dataset:
+If you want to add new dataset to datasets, you create a directory and rename what you want to add category (like 'cat' or 'phone').
 
-Contribution: 2018-10-25 00:00
+If you want to add a new training image to previously category datasets, you add a image to about category directory and if you have `npy` files in `Data` folder delete `npy_train_data` folder.
 
-Contribution: 2018-10-25 00:01
+Note: We work on 64x64 image also if you use bigger or smaller, program will automatically return to 64x64.
 
-Contribution: 2018-10-25 00:02
-
-Contribution: 2018-10-25 00:03
-
-Contribution: 2018-10-25 00:04
-
-Contribution: 2018-10-26 00:00
-
-Contribution: 2018-10-26 00:01
-
-Contribution: 2018-10-26 00:02
-
-Contribution: 2018-10-26 00:03
-
-Contribution: 2018-10-26 00:04
-
-Contribution: 2018-10-29 00:00
-
-Contribution: 2018-10-29 00:01
-
-Contribution: 2018-10-29 00:02
-
-Contribution: 2018-10-29 00:03
-
-Contribution: 2018-10-29 00:04
-
-Contribution: 2018-10-29 00:05
-
-Contribution: 2018-10-29 00:06
-
-Contribution: 2018-10-29 00:07
-
-Contribution: 2018-10-29 00:08
-
-Contribution: 2018-10-30 00:00
-
-Contribution: 2018-10-30 00:01
-
-Contribution: 2018-10-30 00:02
-
-Contribution: 2018-10-30 00:03
-
-Contribution: 2018-10-30 00:04
-
-Contribution: 2018-10-30 00:05
-
-Contribution: 2018-10-30 00:06
-
-Contribution: 2018-10-30 00:07
-
-Contribution: 2018-10-30 00:08
-
-Contribution: 2018-10-30 00:09
-
-Contribution: 2018-10-30 00:10
-
-Contribution: 2018-10-30 00:11
-
-Contribution: 2018-10-30 00:12
-
-Contribution: 2018-10-30 00:13
-
-Contribution: 2018-11-05 00:00
-
-Contribution: 2018-11-05 00:01
-
-Contribution: 2018-11-05 00:02
-
-Contribution: 2018-11-05 00:03
-
-Contribution: 2018-11-05 00:04
-
-Contribution: 2018-11-05 00:05
-
-Contribution: 2018-11-05 00:06
-
-Contribution: 2018-11-05 00:07
-
-Contribution: 2018-11-06 00:00
-
-Contribution: 2018-11-06 00:01
-
-Contribution: 2018-11-06 00:02
-
-Contribution: 2018-11-06 00:03
-
-Contribution: 2018-11-06 00:04
-
-Contribution: 2018-11-06 00:05
-
-Contribution: 2018-11-06 00:06
-
-Contribution: 2018-11-07 00:00
-
-Contribution: 2018-11-07 00:01
-
-Contribution: 2018-11-07 00:02
-
-Contribution: 2018-11-07 00:03
-
-Contribution: 2018-11-07 00:04
-
-Contribution: 2018-11-07 00:05
-
-Contribution: 2018-11-07 00:06
-
-Contribution: 2018-11-07 00:07
-
-Contribution: 2018-11-07 00:08
-
-Contribution: 2018-11-12 00:00
-
-Contribution: 2018-11-12 00:01
-
-Contribution: 2018-11-12 00:02
-
-Contribution: 2018-11-12 00:03
-
-Contribution: 2018-11-12 00:04
-
-Contribution: 2018-11-12 00:05
-
-Contribution: 2018-11-12 00:06
-
-Contribution: 2018-11-12 00:07
-
-Contribution: 2018-11-12 00:08
-
-Contribution: 2018-11-12 00:09
-
-Contribution: 2018-11-12 00:10
-
-Contribution: 2018-11-13 00:00
-
-Contribution: 2018-11-13 00:01
-
-Contribution: 2018-11-13 00:02
-
-Contribution: 2018-11-13 00:03
-
-Contribution: 2018-11-13 00:04
-
-Contribution: 2018-11-13 00:05
-
-Contribution: 2018-11-13 00:06
-
-Contribution: 2018-11-13 00:07
-
-Contribution: 2018-11-15 00:00
-
-Contribution: 2018-11-15 00:01
-
-Contribution: 2018-11-15 00:02
-
-Contribution: 2018-11-15 00:03
-
-Contribution: 2018-11-15 00:04
-
-Contribution: 2018-11-15 00:05
-
-Contribution: 2018-11-15 00:06
-
-Contribution: 2018-11-15 00:07
-
-Contribution: 2018-11-15 00:08
-
-Contribution: 2018-11-15 00:09
-
-Contribution: 2018-11-15 00:10
-
-Contribution: 2018-11-15 00:11
-
-Contribution: 2018-11-15 00:12
-
-Contribution: 2018-11-16 00:00
-
-Contribution: 2018-11-16 00:01
-
-Contribution: 2018-11-16 00:02
-
-Contribution: 2018-11-16 00:03
-
-Contribution: 2018-11-16 00:04
-
-Contribution: 2018-11-16 00:05
-
-Contribution: 2018-11-16 00:06
-
-Contribution: 2018-11-16 00:07
-
-Contribution: 2018-11-16 00:08
-
-Contribution: 2018-11-16 00:09
-
-Contribution: 2018-11-16 00:10
-
-Contribution: 2018-11-19 00:00
-
-Contribution: 2018-11-19 00:01
-
-Contribution: 2018-11-20 00:00
-
-Contribution: 2018-11-20 00:01
-
-Contribution: 2018-11-20 00:02
-
-Contribution: 2018-11-20 00:03
-
-Contribution: 2018-11-20 00:04
-
-Contribution: 2018-11-20 00:05
-
-Contribution: 2018-11-20 00:06
-
-Contribution: 2018-11-20 00:07
-
-Contribution: 2018-11-20 00:08
-
-Contribution: 2018-11-20 00:09
-
-Contribution: 2018-11-20 00:10
-
-Contribution: 2018-11-20 00:11
-
-Contribution: 2018-11-20 00:12
-
-Contribution: 2018-11-20 00:13
-
-Contribution: 2018-11-21 00:00
-
-Contribution: 2018-11-21 00:01
-
-Contribution: 2018-11-21 00:02
-
-Contribution: 2018-11-22 00:00
-
-Contribution: 2018-11-22 00:01
-
-Contribution: 2018-11-22 00:02
-
-Contribution: 2018-11-22 00:03
-
-Contribution: 2018-11-22 00:04
-
-Contribution: 2018-11-22 00:05
-
-Contribution: 2018-11-22 00:06
-
-Contribution: 2018-11-22 00:07
-
-Contribution: 2018-11-22 00:08
-
-Contribution: 2018-11-22 00:09
-
-Contribution: 2018-11-26 00:00
-
-Contribution: 2018-11-26 00:01
-
-Contribution: 2018-11-26 00:02
-
-Contribution: 2018-11-26 00:03
-
-Contribution: 2018-11-26 00:04
-
-Contribution: 2018-11-26 00:05
-
-Contribution: 2018-11-26 00:06
-
-Contribution: 2018-11-26 00:07
-
-Contribution: 2018-11-26 00:08
-
-Contribution: 2018-11-26 00:09
-
-Contribution: 2018-11-26 00:10
-
-Contribution: 2018-11-26 00:11
-
-Contribution: 2018-11-26 00:12
-
-Contribution: 2018-11-26 00:13
-
-Contribution: 2018-11-29 00:00
-
-Contribution: 2018-11-29 00:01
-
-Contribution: 2018-11-29 00:02
-
-Contribution: 2018-11-29 00:03
-
-Contribution: 2018-11-29 00:04
-
-Contribution: 2018-11-29 00:05
-
-Contribution: 2018-11-29 00:06
-
-Contribution: 2018-11-29 00:07
-
-Contribution: 2018-11-30 00:00
-
-Contribution: 2018-11-30 00:01
-
-Contribution: 2018-11-30 00:02
-
-Contribution: 2018-11-30 00:03
-
-Contribution: 2018-11-30 00:04
-
-Contribution: 2018-11-30 00:05
-
-Contribution: 2018-11-30 00:06
-
-Contribution: 2018-11-30 00:07
-
-Contribution: 2018-11-30 00:08
-
+### Important Notes:
+- Used Python Version: 3.6.0
+- Install necessary modules with `sudo pip3 install -r requirements.txt` command.
